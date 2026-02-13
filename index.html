@@ -204,7 +204,7 @@ to{transform:translateY(-10vh);}
 <!-- HERO -->
 
 <div class="hero" id="hero">
-<h1>Hey ❤️</h1>
+<h1>Hey Wifeyy..!! ❤️</h1>
 <button class="startBtn" id="start">Tap To Begin</button>
 </div>
 
@@ -270,6 +270,34 @@ Next →
 </div>
 
 <script>
+  /* HEART EXPLOSION */
+
+function heartExplosion(){
+
+for(let i=0;i<80;i++){
+
+let heart=document.createElement("div");
+heart.innerHTML="❤️";
+heart.classList.add("heart");
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*24+16)+"px";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),5000);
+}
+}
+
+/* YES */
+
+yes.onclick=()=>{
+heartExplosion(); // ⭐ ADD THIS LINE
+story.style.display="none";
+celebrate.style.display="flex";
+}
+
 
 const music=document.getElementById("music");
 
@@ -370,11 +398,40 @@ document.body.appendChild(heart);
 setTimeout(()=>heart.remove(),7000);
 
 }
+  const message = `Out of billions of people,
+somehow God led me to you.
+
+You became my favorite part of every day.
+And I really want us to work things out,
+because I truly love you. ❤️`;
+
+let idx = 0;
+
+function typeWriter(){
+if(idx < message.length){
+document.getElementById("typeText").innerHTML += message.charAt(idx);
+idx++;
+setTimeout(typeWriter,40);
+}
+}
+
+start.onclick=()=>{
+music.play().catch(()=>{});
+
+hero.classList.add("fade");
+
+setTimeout(()=>{
+hero.style.display="none";
+story.style.display="flex";
+typeWriter(); // ⭐ start typing
+},1200);
+}
 
 </script>
 
 </body>
 </html>
+
 
 
 
