@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<audio id="music" preload="auto" loop>
+  <source src="https://files.catbox.moe/ra9iuu.mp3" type="audio/mpeg">
+</audio>
+
+<title>For Someone Who Means Everything To Me And Has My Hhole Heart ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:black;
+color:white;
+overflow:hidden;
+}
+
+/* 🌌 Animated Gradient Sky */
+
+.sky{
+position:fixed;
+height:100%;
+width:100%;
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000);
+background-size:400% 400%;
+animation:sky 15s ease infinite;
+z-index:-2;
+}
+
+@keyframes sky{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+}
+
+.hero h1{
+font-size:42px;
+font-weight:700;
+}
+
+.startBtn{
+margin-top:40px;
+padding:18px 34px;
+font-size:20px;
+border:none;
+border-radius:16px;
+background:#ff4d6d;
+color:white;
+}
+
+/* FADE */
+
+.fade{
+animation:fade 1.2s forwards;
+}
+
+@keyframes fade{
+to{opacity:0;visibility:hidden;}
+}
+
+/* STORY */
+
+.story{
+position:absolute;
+height:100vh;
+width:100%;
+display:none;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+font-size:22px;
+line-height:1.8;
+}
+
+/* POLAROID */
+
+.polaroid{
+background:white;
+padding:12px;
+border-radius:6px;
+margin-top:20px;
+}
+
+.photo{
+width:260px;
+display:block;
+}
+
+/* BUTTONS */
+
+.buttons{
+position:relative;
+height:180px;
+width:100%;
+}
+
+button{
+border:none;
+border-radius:16px;
+padding:18px 28px;
+font-size:20px;
+margin:10px;
+cursor:pointer;
+}
+
+#yes{
+background:#ff4d6d;
+color:white;
+font-size:26px;
+font-weight:700;
+transition:.3s;
+}
+
+#no{
+position:absolute;
+background:rgba(255,255,255,.25);
+color:white;
+}
+
+/* CELEBRATE */
+
+.celebrate{
+position:absolute;
+height:100vh;
+width:100%;
+background:black;
+display:none;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+}
+
+/* SLIDESHOW */
+
+.slideshow{
+position:absolute;
+height:100vh;
+width:100%;
+background:black;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.slide{
+width:90%;
+max-width:420px;
+border-radius:20px;
+transition:1.5s;
+}
+
+/* Floating Hearts */
+
+.heart{
+position:absolute;
+font-size:18px;
+animation:float linear forwards;
+}
+
+@keyframes float{
+from{transform:translateY(100vh);}
+to{transform:translateY(-10vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sky"></div>
+
+
+
+
+
+<!-- HERO -->
+
+<div class="hero" id="hero">
+<h1>Hey ❤️</h1>
+<button class="startBtn" id="start">Tap To Begin</button>
+</div>
+
+<!-- STORY -->
+
+<div class="story" id="story">
+
+<p>
+
+Out of billions of people  
+somehow god  led me to you.
+
+And then you became my favorite part of every day.
+i really want us to work things out cause i really love youuu
+
+</p>
+
+<div class="polaroid">
+<img src="Photo9.jpeg" class="photo">
+</div>
+
+<p style="margin-top:30px;">
+So today I just want to ask something simple…
+</p>
+
+<h1 style="margin-top:20px;">Will you be my Valentine? My gurl?  ❤️</h1>
+
+<div class="buttons">
+<button id="yes">YES 😍</button>
+<button id="no">NO 🙈</button>
+</div>
+
+</div>
+
+<!-- CELEBRATION -->
+
+<div class="celebrate" id="celebrate">
+
+<h1>❤️Thankk you my loveee for making my day more special
+     and the bestest i really lovee youu my wifeyy 
+    I am sorry for whatever i did but i really love you and 
+    will do everything it takes to make you feel better and special   ❤️</h1>
+
+<button id="next"
+style="
+margin-top:40px;
+padding:18px 30px;
+font-size:20px;
+border:none;
+border-radius:16px;
+background:#ff4d6d;
+color:white;
+">
+Next →
+</button>
+
+</div>
+
+<!-- SLIDESHOW -->
+
+<div class="slideshow" id="slideshow">
+<img id="slide" class="slide">
+</div>
+
+<script>
+
+const music=document.getElementById("music");
+
+/* START */
+
+start.onclick=()=>{
+
+music.play().catch(()=>{});
+
+hero.classList.add("fade");
+
+setTimeout(()=>{
+hero.style.display="none";
+story.style.display="flex";
+},1200);
+
+}
+
+/* RUNAWAY NO */
+
+let scale=1;
+
+function dodge(){
+
+const maxX=window.innerWidth-120;
+const maxY=160;
+
+no.style.left=Math.random()*maxX+"px";
+no.style.top=Math.random()*maxY+"px";
+
+scale+=0.12;
+yes.style.transform=`scale(${scale})`;
+
+}
+
+no.addEventListener("touchstart",dodge);
+no.addEventListener("mouseover",dodge);
+
+/* YES */
+
+yes.onclick=()=>{
+story.style.display="none";
+celebrate.style.display="flex";
+}
+
+/* SLIDESHOW */
+
+const slides=[
+"Photo1.jpeg",
+"Photo2.jpeg",
+"Photo3.jpeg",
+"Photo4.jpeg",
+"Photo5.jpeg",
+"Photo6.jpeg",
+"Photo7.jpeg"
+];
+
+let i=0;
+
+next.onclick=()=>{
+
+celebrate.style.display="none";
+slideshow.style.display="flex";
+
+slide.src=slides[0];
+
+setInterval(()=>{
+
+i++;
+if(i>=slides.length) i=0;
+
+slide.style.opacity=0;
+
+setTimeout(()=>{
+slide.src=slides[i];
+slide.style.opacity=1;
+},800);
+
+createHeart();
+
+},3500);
+
+}
+
+/* Floating hearts during slideshow */
+
+function createHeart(){
+
+let heart=document.createElement("div");
+heart.innerHTML="❤️";
+heart.classList.add("heart");
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*4+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),7000);
+
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
