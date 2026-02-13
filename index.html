@@ -181,7 +181,7 @@ transition:1.5s;
 
 .heart{
 position:absolute;
-font-size:58px;
+font-size:69px;
 animation:float linear forwards;
 }
 
@@ -213,6 +213,7 @@ to{transform:translateY(-10vh);}
 <div class="story" id="story">
 
 <p>
+  
 
 Out of billions of people  
 somehow god  led me to you.
@@ -270,6 +271,25 @@ Next →
 </div>
 
 <script>
+  function typeWriter(){
+if(idx < message.length){
+document.getElementById("typeText").innerHTML += message.charAt(idx);
+idx++;
+setTimeout(typeWriter,40);
+}
+}
+
+start.onclick=()=>{
+music.play().catch(()=>{});
+
+hero.classList.add("fade");
+
+setTimeout(()=>{
+hero.style.display="none";
+story.style.display="flex";
+typeWriter(); // ⭐ start typing
+},1200);
+}
   /* HEART EXPLOSION */
 
 function heartExplosion(){
@@ -407,30 +427,13 @@ because I truly love you. ❤️`;
 
 let idx = 0;
 
-function typeWriter(){
-if(idx < message.length){
-document.getElementById("typeText").innerHTML += message.charAt(idx);
-idx++;
-setTimeout(typeWriter,40);
-}
-}
 
-start.onclick=()=>{
-music.play().catch(()=>{});
-
-hero.classList.add("fade");
-
-setTimeout(()=>{
-hero.style.display="none";
-story.style.display="flex";
-typeWriter(); // ⭐ start typing
-},1200);
-}
 
 </script>
 
 </body>
 </html>
+
 
 
 
